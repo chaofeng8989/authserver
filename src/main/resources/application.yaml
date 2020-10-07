@@ -19,8 +19,10 @@ spring:
     password: 'team6'
     driver-class-name: 'com.mysql.cj.jdbc.Driver'
     hikari:
-      max-lifetime: 400000
-
+      max-lifetime: 30000
+      minimum-idle: 3
+      maximum-pool-size: 10
+      connection-test-query: SELECT 1
   jpa:
     hibernate:
       ddl-auto: update
